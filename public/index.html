@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-analytics.js"></script>
+
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+<!-- Authentication -->
+<script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDNH9VWaHc2QIEhr6at7HbFO-Si7mfM9T0",
+    authDomain: "something-unique-9a284.firebaseapp.com",
+    projectId: "something-unique-9a284",
+    storageBucket: "something-unique-9a284.appspot.com",
+    messagingSenderId: "459588426937",
+    appId: "1:459588426937:web:3e282bb1e9cee952f14f68",
+    measurementId: "G-CFN6K1S736"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="app.js" defer></script>
+
+<style>
+
+  body {
+    margin: 50px 0px 0px 50px;
+  }
+
+  .form-group {
+    width: 50%;
+  }
+  #dataEntry div {
+    padding-top: 15px;
+  }
+
+  #dataEntry div:last-of-type {
+    padding-bottom: 15px;
+  }
+
+</style>
+<body>
+  <h1>Sign In 😤</h1>
+  h3
+  <section id="whenSignedOut">
+    <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+  </section>
+  <section id="whenSignedIn" hidden="true">
+    <div id="userDetails"></div>
+    <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+  </section>
+  <section>
+
+    <form id="dataEntry" hidden="true">
+      <div class="form-group">
+        <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name " required>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="itemWeight" placeholder="Item Weight" required>
+      </div>
+      <button type="submit" id="createThing" class="btn btn-success"> Create Item </button>
+    </form>
+
+    <ul id="thingsList" hidden="true">
+
+    </ul>
+  </section>
+</body>
+</html>
