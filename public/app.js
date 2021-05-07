@@ -39,7 +39,6 @@ auth.onAuthStateChanged((user) => {
     whenSignedOut.hidden = true;
     userDetails.innerHTML = `
       <h3> Hi ${user.displayName}! </h3>
-      <p> Your user id is: ${user.uid} </p>
     `
   } else {
     // User is signed out.
