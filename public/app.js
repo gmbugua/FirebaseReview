@@ -4,6 +4,7 @@ const db = firebase.firestore();
 // DB
 const createThing = document.getElementById("createThing");
 const thingsList = document.getElementById("thingsList");
+const thingsListTitle = document.getElementById("thingsListTitle");
 const dataEntry = document.getElementById("dataEntry");
 
 // Auth
@@ -76,10 +77,11 @@ auth.onAuthStateChanged(user => {
       .where('uid', '==', user.uid)
       .onSnapshot(querySnapshot => {
         const items = querySnapshot.docs.map(doc => {
-          return `<li>${doc.data().name}</li>`
+          return `<li class="list-group-item">${doc.data().name}</li>`;
         });
         thingsList.innerHTML = items.join('');
       });
+
   } else {
     unsubscribe && unsubscribe(); //if the unsubscribe function is defined
   }
